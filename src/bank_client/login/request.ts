@@ -1,3 +1,4 @@
+import { BankClientRequestError } from '../error';
 import { BASE_HEADERS, encryptMessage, makeSecureRequest } from '../utils';
 import type { LoginRequest, LoginResponse } from './types';
 
@@ -35,6 +36,6 @@ export async function loginRequest(username: string, password: string): Promise<
     const response = await makeLoginRequest(username, password);
     return response;
   } catch (error) {
-    throw new Error(`[Request error]: Error while requesting login. ${error}`);
+    throw new BankClientRequestError(`[Login Request]: Error while requesting login. ${error}`);
   }
 }
