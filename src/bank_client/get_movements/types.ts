@@ -11,16 +11,23 @@ export interface TransactionRequest {
     };
 }
 
+type Year = string;
+type Month = string;
+type Day = string;
+type Hour = string;
+type Minute = string;
+type Second = string;
+
 interface TransactionDetails {
     transactionId: string;
     description: string;
     transactionAmount: number;
-    transactionDate: string;
-    accountingDate: string;
+    transactionDate: `${Year}-${Month}-${Day}T${Hour}:${Minute}:${Second}Z`;
+    accountingDate: `${Year}-${Month}-${Day}`;
 }
 
 interface TransactionOwnership {
-    ownershipId: string;
+    ownershipId: 'A' | 'T' | string;
 }
 
 interface TransactionLocation {
@@ -78,7 +85,7 @@ interface Transaction {
         code: string;
     };
     detailIdentifiers: DetailIdentifiers;
-    movementType: string;
+    movementType: 'A' | 'E' | string;
 }
 
 interface PaginationInfo {
