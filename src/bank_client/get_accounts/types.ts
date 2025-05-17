@@ -1,3 +1,5 @@
+import { CreditCardIdentifier } from '../types';
+
 interface CustomerOperation {
     operationInternalNumber: string;
 }
@@ -18,13 +20,6 @@ export interface AccountDataResponse {
     creditCards: {
         creditCard: CreditCard;
     };
-}
-
-export interface CreditCardIdentifier {
-    productType: string;
-    productSubType: string;
-    creditCardId: string;
-    truncatedPan: string;
 }
 
 export interface CreditCardData {

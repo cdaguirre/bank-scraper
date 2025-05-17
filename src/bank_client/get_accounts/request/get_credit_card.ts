@@ -1,8 +1,10 @@
 import { makeSecureRequest } from '../../utils';
 
 import { BASE_HEADERS } from '../../utils';
-import { CreditCardIdentifier, CreditCardsResponse } from '../types';
+import type {  CreditCardsResponse } from '../types';
+import type { CreditCardIdentifier } from '../../types';
 import { BankClientRequestError } from '../../error';
+
 export async function getCreditCardData(
   token: string,
   creditCard: CreditCardIdentifier
